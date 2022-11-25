@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/geo_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/geo_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/geo_text_view"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/geo_text_view"
+        app:srcCompat="@drawable/geo_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/geo_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:maxEms="10"
+        android:maxLines="1"
+        android:textColor="@color/second_color"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/geo_arrow_icon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/geo_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Zihuatanejo, Gro" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/geo_arrow_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/geo_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/geo_text_view"
+        app:layout_constraintTop_toTopOf="@+id/geo_text_view"
+        app:srcCompat="@drawable/geo_arrow_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/filter_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="center"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintBottom_toBottomOf="@+id/geo_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/geo_text_view"
+        app:srcCompat="@drawable/filter_icon" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/geo_text_view" />
+
+
+    <View
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:background="@drawable/shape_color_second_corners_top_left_right_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/point"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="7dp"
+        android:background="@drawable/shape_oval"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/explorer"
+        app:layout_constraintEnd_toStartOf="@id/explorer"
+        app:layout_constraintTop_toTopOf="@+id/explorer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/explorer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mark_pro_bold"
+        android:text="@string/explorer"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+        app:layout_constraintEnd_toStartOf="@id/cart_icon"
+        app:layout_constraintStart_toStartOf="@+id/bottom_bar"
+        app:layout_constraintTop_toTopOf="@id/bottom_bar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cart_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/explorer"
+        app:layout_constraintEnd_toStartOf="@id/favourites_icon"
+        app:layout_constraintStart_toEndOf="@+id/explorer"
+        app:layout_constraintTop_toTopOf="@+id/explorer"
+        app:srcCompat="@drawable/cart_icon_18" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/products_in_cart_amount_textview"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/shape_oval"
+        android:backgroundTint="@color/main_color"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/cart_icon"
+        app:layout_constraintEnd_toEndOf="@id/cart_icon"
+        app:layout_constraintStart_toEndOf="@id/cart_icon"
+        app:layout_constraintTop_toTopOf="@id/cart_icon"
+        tools:text="5"
+        tools:ignore="SmallSp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/favourites_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/explorer"
+        app:layout_constraintEnd_toStartOf="@id/profile_icon"
+        app:layout_constraintStart_toEndOf="@+id/cart_icon"
+        app:layout_constraintTop_toTopOf="@+id/explorer"
+        app:srcCompat="@drawable/favourites_icon_19" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/explorer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/favourites_icon"
+        app:layout_constraintTop_toTopOf="@+id/explorer"
+        app:srcCompat="@drawable/profile_icon" />
+
+    <include
+        android:id="@+id/included_splash_screen"
+        layout="@layout/splash_screen"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/included_exception_dialog"
+        layout="@layout/exception_dialog"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

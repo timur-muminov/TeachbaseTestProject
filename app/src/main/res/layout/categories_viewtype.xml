@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_color">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/select_category_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:fontFamily="@font/mark_pro_bold"
+        android:text="@string/select_category"
+        android:textColor="@color/second_color"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/view_all_text_view"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_all_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="@font/mark_pro_regular"
+        android:text="@string/view_all"
+        android:textColor="@color/main_color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/select_category_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/select_category_text_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categories_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:clipToPadding="false"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_category_text_view" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_color_white_corners_50"
+        android:elevation="1dp"
+        app:boxBackgroundColor="@color/transparent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:boxBackgroundMode="none"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/apps_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categories_recyclerview"
+        app:startIconDrawable="@drawable/search_icon"
+        app:startIconTint="@color/main_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/mark_pro_regular"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/second_color"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:id="@+id/apps_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_oval"
+        android:backgroundTint="@color/main_color"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/view_all_text_view"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/apps_icon" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

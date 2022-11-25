@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background_color"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_button"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_color_second_corners_10"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/product_details"
+        android:textColor="@color/second_color"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintEnd_toStartOf="@+id/show_cart_button"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
+        app:layout_constraintTop_toTopOf="@+id/back_button" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/show_cart_button"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/shape_color_main_corners_10"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back_button"
+        app:srcCompat="@drawable/cart_icon_14" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:overScrollMode="never"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/appCompatTextView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <FrameLayout
+        android:id="@+id/add_to_cart_button"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/shape_color_main_corners_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="45dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:letterSpacing="-0.033"
+            android:text="@string/add_to_cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="38dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:letterSpacing="-0.033"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="$1,500.00" />
+
+    </FrameLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/colors_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="40dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/add_to_cart_button"
+        app:layout_constraintEnd_toStartOf="@+id/capacity_recyclerview"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/capacity_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingEnd="40dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/colors_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/colors_recyclerview"
+        app:layout_constraintTop_toTopOf="@+id/colors_recyclerview"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:letterSpacing="-0.033"
+        android:fontFamily="@font/mark_pro_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/select_color_and_capacity"
+        android:textColor="@color/second_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/colors_recyclerview"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <include
+        android:id="@+id/included_progressbar"
+        layout="@layout/progress_bar"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/included_exception_dialog"
+        layout="@layout/exception_dialog"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

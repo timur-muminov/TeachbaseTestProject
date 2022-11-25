@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_dialog_button"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/shape_color_second_corners_10"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/filter_options"
+        android:textColor="@color/second_color"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/close_dialog_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/close_dialog_button" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/submit_dialog_button"
+        android:layout_width="86dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_color_main_corners_10"
+        android:fontFamily="@font/mark_pro_medium"
+        android:gravity="center"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/close_dialog_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/close_dialog_button" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/brand"
+        android:textColor="@color/second_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/close_dialog_button"
+        app:layout_constraintTop_toBottomOf="@+id/close_dialog_button" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/OutlinedRoundedBox"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconDrawable="@drawable/spinner_arrow_icon"
+        app:endIconMode="dropdown_menu"
+        app:endIconTint="@color/disabled"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/submit_dialog_button"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2">
+
+        <AutoCompleteTextView
+            android:id="@+id/brand_drop_down_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mark_pro_regular"
+            android:hint="@string/brand_hint"
+            android:inputType="none"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/second_color"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/price"
+        android:textColor="@color/second_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/close_dialog_button"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        style="@style/OutlinedRoundedBox"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        app:endIconDrawable="@drawable/spinner_arrow_icon"
+        app:endIconMode="dropdown_menu"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconTint="@color/disabled"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/submit_dialog_button"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/price_drop_down_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/mark_pro_regular"
+            android:hint="@string/price_hint"
+            android:inputType="none"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/second_color"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/mark_pro_medium"
+        android:text="@string/size"
+        android:textColor="@color/second_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/close_dialog_button"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/OutlinedRoundedBox"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        app:endIconDrawable="@drawable/spinner_arrow_icon"
+        app:endIconMode="dropdown_menu"
+        app:endIconTint="@color/disabled"
+        app:hintEnabled="false"
+        app:boxStrokeWidthFocused="1dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/submit_dialog_button"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/size_drop_down_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/mark_pro_regular"
+            android:hint="@string/size_hint"
+            android:inputType="none"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/second_color"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
