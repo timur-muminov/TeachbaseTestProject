@@ -1,6 +1,10 @@
 package buildsrc
 
+import org.apache.tools.ant.util.VectorSet
+
+
 object Dependencies {
+
     const val build_gradle = "com.android.tools.build:gradle:${Versions.build_gradle}"
     const val kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin_gradle_plugin}"
 
@@ -9,9 +13,11 @@ object Dependencies {
 
     const val material = "com.google.android.material:material:${Versions.material}"
 
-    const val kotlin_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines_core}"
-    const val kotlin_coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines_android}"
-    const val kotlin_reflect =  "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin_reflect}"
+    const val kotlin_coroutines_core =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines_core}"
+    const val kotlin_coroutines_android =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines_android}"
+    const val kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin_reflect}"
 
     const val viewmodel_lifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewmodel_lifecycle}"
 
@@ -25,16 +31,21 @@ object Dependencies {
     const val okhttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp_interceptor}"
 
     const val koin_core = "io.insert-koin:koin-core:${Versions.koin_core}"
-        const val koin_android = "io.insert-koin:koin-android:${Versions.koin_android}"
-
+    const val koin_android = "io.insert-koin:koin-android:${Versions.koin_android}"
 
     const val moko_errors = "dev.icerock.moko:errors:${Versions.moko_errors}"
-
     const val moko_mvvm = "dev.icerock.moko:mvvm-core:${Versions.moko_mvvm}"
 
+
     const val simple_rating_bar = "com.github.ome450901:SimpleRatingBar:${Versions.simple_rating_bar}"
+
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation_ui}"
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_fragment}"
+    const val navigation_safeargs_plugin =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_safeargs_plugin}"
 
+    const val room_runtime = "androidx.room:room-runtime:${Versions.room_version}"
+    const val room_compiler = "androidx.room:room-compiler:${Versions.room_version}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
 }
 

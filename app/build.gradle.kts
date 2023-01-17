@@ -2,7 +2,7 @@ plugins {
     id("buildsrc.application")
     id("androidx.navigation.safeargs")
 }
-android.namespace = "com.ecommerceconcept.app"
+android.namespace = "com.teachbasetestproject.app"
 
 
 dependencies {

@@ -1,3 +1,5 @@
+
+
 buildscript {
     repositories {
         mavenCentral()
@@ -7,11 +9,8 @@ buildscript {
         dependencies {
             classpath(buildsrc.Dependencies.kotlin_gradle_plugin)
             classpath(buildsrc.Dependencies.build_gradle)
+            classpath(buildsrc.Dependencies.navigation_safeargs_plugin)
         }
     }
-}
-
-plugins {
-    id("androidx.navigation.safeargs") version "2.5.2" apply false
 }
 

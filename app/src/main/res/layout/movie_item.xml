@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="115dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movie_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/shape_corners_10"
+            app:srcCompat="@drawable/preview_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_rate_textview"
+            android:layout_width="34dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/shape_color_green_1_corners_3"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:textColor="@color/main_text_color"
+            android:textSize="10sp"
+            tools:text="7.4"
+            tools:ignore="SmallSp" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/movie_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:maxLines="3"
+        android:textColor="@color/background"
+        android:textSize="12sp"
+        tools:text="Стыд Францияdaddsad" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/movie_genre_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/gray_3"
+        android:textSize="12sp"
+        tools:text="драма" />
+
+</LinearLayout>

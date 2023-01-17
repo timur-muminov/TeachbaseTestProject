@@ -1,53 +1,28 @@
 <resources>
-    <string name="app_name">Ecommerce Concept</string>
-    <string name="select_category">Select Category</string>
-    <string name="view_all">view all</string>
-    <string name="search">Search</string>
-    <string name="explorer">Explorer</string>
-    <string name="hot_sales">Hot Sales</string>
-    <string name="see_more">see more</string>
-    <string name="best_seller">Best Seller</string>
-    <string name="new_product">New</string>
-    <string name="buy_now">Buy now!</string>
-    <string name="retry">Повторить</string>
-    <string name="ecommerce_concept">Ecommerce\nConcept</string>
-    <string name="filter_options">Filter options</string>
-    <string name="done">Done</string>
-    <string name="brand">Brand</string>
-    <string name="brand_hint">Samsung</string>
-    <string name="price">Price</string>
-    <string name="price_hint">$300 - $500</string>
-    <string name="size_hint">4.5 to 5.5 inches</string>
-    <string name="size">Size</string>
-    <string name="product_details">Product Details</string>
-    <string name="add_to_cart">Add to Cart</string>
-    <string name="select_color_and_capacity">Select color and capacity</string>
-    <string name="shop">Shop</string>
-    <string name="details">Details</string>
-    <string name="features">Features</string>
-    <string name="add_address">Add address</string>
-    <string name="my_cart">My Cart</string>
-    <string name="checkout">Checkout</string>
-    <string name="delivery">Delivery</string>
-    <string name="total">Total</string>
-
-
-    <string-array name="brands_filter">
-        <item>Samsung</item>
-        <item>Iphone</item>
-        <item>Sony</item>
-    </string-array>
-
-    <string-array name="price_filter">
-        <item>$300 – $500</item>
-        <item>$500 – $1,000</item>
-        <item>$1,000 – $10,000</item>
-    </string-array>
-
-    <string-array name="size_filter">
-        <item>4.5 to 5.5 inches</item>
-        <item>5.5 to 6.5 inches</item>
-        <item>6.5 to 7.5 inches</item>
-    </string-array>
+    <string name="app_name">Kinopoisk</string>
+    <string name="home">Главная</string>
+    <string name="search">Поиск</string>
+    <string name="search_hint">Фильмы, сериалы, персоны</string>
+    <string name="refresh">Обновить</string>
+    <string name="search_best_movies">Поиск лучших фильмов</string>
+    <string name="reset">Сбросить</string>
+    <string name="Show">Показывать</string>
+    <string name="all">Все</string>
+    <string name="Movies">Фильмы</string>
+    <string name="serials">Сериалы</string>
+    <string name="genres">Жанры</string>
+    <string name="any">любые</string>
+    <string name="years">Года</string>
+    <string name="rating">Рейтинг</string>
+    <string name="from7">от 7</string>
+    <string name="sort_by">Сортировать по</string>
+    <string name="by_rating">Рейтингу</string>
+    <string name="by_popularity">Популярности</string>
+    <string name="by_date">Дате</string>
+    <string name="show_movies">Показать</string>
+    <string name="anime">Аниме</string>
+    <string name="cartoons">Мультфильмы</string>
+    <string name="year">Год</string>
+    <string name="save">Сохранить</string>
 
 </resources>

@@ -2,7 +2,7 @@ plugins {
     id("buildsrc.library")
 }
 
-android.namespace = "com.ecommerceconcept.home"
+android.namespace = "com.teachbasetestproject.home"
 
 dependencies {
     implementation(buildsrc.Dependencies.kotlin_coroutines_android)
@@ -13,11 +13,8 @@ dependencies {
 }
 
 dependencies {
-    api(projects.entities.products)
-    api(projects.entities.categories)
-    api(projects.entities.filters)
+    api(projects.entities.movie)
+    api(projects.entities.filter)
 
-    api(projects.features.cart)
-    api(projects.features.favourites)
     implementation(projects.features.common)
 }

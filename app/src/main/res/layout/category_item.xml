@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@color/background"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/category_image_container"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/shape_oval_color_white"
-        android:backgroundTint="@color/white"
-        android:elevation="1dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/category_image"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            tools:src="@drawable/disabled_phones_category" />
-
-    </FrameLayout>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/category_title"
+    <TextView
+        android:id="@+id/category_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="7dp"
-        android:fontFamily="@font/mark_pro_medium"
-        android:textColor="@color/second_color"
-        android:textSize="12sp"
-        tools:text="Phones" />
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/main_text_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/action_bar"
+        tools:text="Фильмы для вас" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movies_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/background"
+        android:clipToPadding="true"
+        android:orientation="horizontal"
+        android:paddingStart="23dp"
+        android:paddingEnd="23dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>

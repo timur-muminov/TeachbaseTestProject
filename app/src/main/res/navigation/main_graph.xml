@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/container_fragment">
+
+    <fragment
+        android:id="@+id/container_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.main.ContainerFragment"
+        tools:layout="@layout/container_fragment" />
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.main.home.HomeFragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_dashboard_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.main.search.SearchFragment"
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_search_fragment_to_filter_fragment"
+            app:destination="@id/filter_fragment" />
+        <action
+            android:id="@+id/action_search_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/filter_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.main.filter.FiltersFragment"
+        tools:layout="@layout/filter_fragment" >
+        <action
+            android:id="@+id/action_filter_fragment_to_filter_result_fragment"
+            app:destination="@id/filter_result_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filter_result_fragment"
+        tools:layout="@layout/filter_result_fragment" />
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        tools:layout="@layout/movie_detail_fragment" >
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

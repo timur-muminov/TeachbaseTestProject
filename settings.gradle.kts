@@ -16,19 +16,15 @@ dependencyResolutionManagement {
         maven("https://jitpack.io")
     }
 }
-rootProject.name = "EcommerceConcept"
+rootProject.name = "TeachbaseTestProject"
 include(":app")
 include(":app-dependencies")
+include(":entities:movie")
+include(":entities:filter")
 
-
-include(":entities:products")
-include(":entities:product")
-include(":entities:categories")
-include(":entities:filters")
-include(":entities:cart")
 
 include(":features:common")
 include(":features:home")
-include(":features:product_detail")
-include(":features:cart")
-include(":features:favourites")
+include(":features:movie_detail")
+include(":features:search")
+include(":features:filter")

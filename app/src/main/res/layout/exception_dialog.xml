@@ -3,38 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/exception_dialog"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:clickable="true"
-    android:elevation="10dp"
+    android:elevation="20dp"
     android:focusable="true"
-    android:background="@color/background_color"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/error_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
-        android:fontFamily="@font/mark_pro_bold"
-        android:textColor="@color/second_color"
-        android:textSize="14sp"
+        android:textColor="@color/main_text_color"
+        android:textSize="16sp"
         tools:text="Нет подключения к интернету" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/retry_button"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/mark_pro_bold"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/montserrat_bold"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:text="@string/refresh"
         android:textAllCaps="false"
         android:textSize="14sp"
-        app:backgroundTint="@color/main_color"
-        app:cornerRadius="10dp"
-        android:text="@string/retry" />
+        app:backgroundTint="@color/orange_1"
+        app:cornerRadius="35dp" />
 
 </LinearLayout>

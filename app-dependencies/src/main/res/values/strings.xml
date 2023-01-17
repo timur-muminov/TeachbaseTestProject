@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_exception">Возникла какая-то ошибка, попробуйте позже</string>
+    <string name="no_internet_connection">Отсутствует соединение с сервером</string>
+</resources>

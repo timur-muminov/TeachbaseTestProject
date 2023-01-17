@@ -30,4 +30,7 @@ object Versions {
     const val simple_rating_bar = "1.5.1"
     const val navigation_ui = "2.5.3"
     const val navigation_fragment = "2.5.3"
+    const val navigation_safeargs_plugin = "2.5.2"
+
+    const val room_version = "2.5.0"
 }

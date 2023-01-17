@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/state_search_animation"
+        app:duration="300"
+        motion:constraintSetEnd="@+id/endSearch"
+        motion:constraintSetStart="@id/startSearch">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="0"
+                app:motionTarget="@+id/filter_icon" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="20"
+                app:motionTarget="@+id/filter_icon" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="0"
+                app:motionTarget="@+id/divider" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="20"
+                app:motionTarget="@+id/divider" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="0"
+                app:motionTarget="@+id/search_icon" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="20"
+                app:motionTarget="@+id/search_icon" />
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/startSearch" >
+        <Constraint
+            android:id="@+id/included_exception_dialog"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_divider"
+            app:visibilityMode="ignore" />
+        <Constraint
+            android:id="@+id/included_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_divider"
+            app:visibilityMode="ignore" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/endSearch">
+
+        <Constraint
+            android:id="@+id/search_edittext"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="2"
+            android:textColor="@color/main_text_color"
+            android:textColorHint="@color/secondary_text_color"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/search_container"
+            app:layout_constraintEnd_toStartOf="@id/divider"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@+id/search_icon"
+            app:layout_constraintTop_toTopOf="@+id/search_container" />
+
+        <Constraint
+            android:id="@+id/search_container"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:alpha="0"
+            android:background="@drawable/shape_color_gray1_corners_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/filter_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="0dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="@+id/search_container"
+            app:layout_constraintEnd_toEndOf="@+id/search_container"
+            app:layout_constraintTop_toTopOf="@+id/search_container"
+            app:srcCompat="@drawable/filter_icon" />
+
+        <Constraint
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/gray_2"
+            app:layout_constraintBottom_toBottomOf="@+id/search_container"
+            app:layout_constraintEnd_toStartOf="@+id/filter_icon"
+            app:layout_constraintTop_toTopOf="@+id/search_container" />
+
+        <Constraint
+            android:id="@+id/search_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="22dp"
+            android:alpha="0"
+            android:src="@drawable/arrow_back_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/search_container"
+            app:layout_constraintStart_toStartOf="@+id/search_container"
+            app:layout_constraintTop_toTopOf="@+id/search_container" />
+
+        <Constraint
+            android:id="@+id/arrow_back_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="22dp"
+            android:alpha="1"
+            android:src="@drawable/arrow_back_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/search_container"
+            app:layout_constraintStart_toStartOf="@+id/search_container"
+            app:layout_constraintTop_toTopOf="@+id/search_container" />
+
+        <Constraint
+            android:id="@+id/under_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:alpha="1"
+            android:background="@color/gray_4"
+            app:layout_constraintEnd_toEndOf="@id/search_container"
+            app:layout_constraintStart_toStartOf="@+id/search_container"
+            app:layout_constraintTop_toBottomOf="@id/search_container" />
+        <Constraint
+            android:id="@+id/included_exception_dialog"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_divider"
+            app:visibilityMode="ignore" />
+        <Constraint
+            android:id="@+id/included_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_divider"
+            app:visibilityMode="ignore" />
+
+    </ConstraintSet>
+</MotionScene>

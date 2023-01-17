@@ -5,18 +5,19 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".App"
+        android:usesCleartextTraffic="true"
+        android:name="com.teachbaseTestProject.app.App"
         android:theme="@style/Theme.EcommerceConcept"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.teachbaseTestProject.app.MainActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
             android:exported="true">
