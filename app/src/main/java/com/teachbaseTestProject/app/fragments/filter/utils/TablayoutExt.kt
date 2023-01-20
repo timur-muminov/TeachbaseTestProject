@@ -1,4 +1,4 @@
-package com.teachbaseTestProject.app.fragments.main.filter.utils
+package com.teachbaseTestProject.app.fragments.filter.utils
 
 import com.google.android.material.tabs.TabLayout
 

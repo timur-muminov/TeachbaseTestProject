@@ -45,7 +45,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/montserrat_semibold"
         android:maxLines="3"
-        android:textColor="@color/background"
+        android:textColor="@color/main_text_color"
         android:textSize="12sp"
         tools:text="Стыд Францияdaddsad" />
 

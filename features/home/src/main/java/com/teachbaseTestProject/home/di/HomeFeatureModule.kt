@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 val homeFeatureModule = module {
     viewModel {
-        HomeViewModel(exceptionHandler = get(), byFiltersSearchable = get())
+        HomeViewModel(exceptionHandler = get(), homeRepository = get())
     }
     single { Categories() }
 }

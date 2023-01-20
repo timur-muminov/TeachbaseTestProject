@@ -1,4 +1,4 @@
-package com.teachbaseTestProject.app.fragments.main.filter
+package com.teachbaseTestProject.app.fragments.filter
 
 import android.os.Bundle
 import android.view.LayoutInflater

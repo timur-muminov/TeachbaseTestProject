@@ -1,7 +1,9 @@
 package com.teachbaseTestProject.app_dependencies.di
 
 import com.teachbaseTestProject.app_dependencies.exceptions_handler.NetworkExceptionMapper
-import com.teachbaseTestProject.app_dependencies.repository.MoviesRepositoryImpl
+import com.teachbaseTestProject.app_dependencies.repository.HomeRepositoryImpl
+import com.teachbaseTestProject.app_dependencies.repository.MovieDetailRepositoryImpl
+import com.teachbaseTestProject.app_dependencies.repository.SearchRepositoryImpl
 import com.teachbaseTestProject.home.model.HomeRepository
 import com.teachbaseTestProject.movie_detail.model.MovieDetailRepository
 import com.teachbaseTestProject.search.model.SearchRepository
@@ -25,11 +27,10 @@ val exceptionHandlerModule = module {
 
 
 val repositoryModule = module {
-    single<HomeRepository> { get<MoviesRepositoryImpl>() }
-    single<MovieDetailRepository> { get<MoviesRepositoryImpl>() }
-    single<SearchRepository> { get<MoviesRepositoryImpl>() }
+    single<HomeRepository> { HomeRepositoryImpl(localDataSource = get(), remoteDataSource = get(), categories = get()) }
+    single<MovieDetailRepository> { MovieDetailRepositoryImpl(localDataSource = get(), remoteDataSource = get()) }
+    single<SearchRepository> { SearchRepositoryImpl(remoteDataSource = get()) }
 
-
-    single { MoviesRepositoryImpl(localDataSource = get(), remoteDataSource = get(), categories = get()) }
+    single { HomeRepositoryImpl(localDataSource = get(), remoteDataSource = get(), categories = get()) }
 }
 

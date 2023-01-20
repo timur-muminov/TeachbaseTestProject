@@ -6,6 +6,7 @@ import com.teachbaseTestProject.app_dependencies.di.localDataSourceModule
 import com.teachbaseTestProject.app_dependencies.di.networkModule
 import com.teachbaseTestProject.app_dependencies.di.repositoryModule
 import com.teachbaseTestProject.app_dependencies.exceptions_handler.ExceptionHandlerConfigurator
+import com.teachbaseTestProject.filter.di.filterFeatureModule
 import com.teachbaseTestProject.home.di.homeFeatureModule
 import com.teachbaseTestProject.search.di.searchFeatureModule
 
@@ -25,7 +26,8 @@ class App : Application() {
                 networkModule,
                 homeFeatureModule,
                 localDataSourceModule,
-                searchFeatureModule
+                searchFeatureModule,
+                filterFeatureModule
             )
         }
     }

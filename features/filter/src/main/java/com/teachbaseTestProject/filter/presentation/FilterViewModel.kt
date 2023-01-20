@@ -36,8 +36,7 @@ class FilterViewModel : ViewModel() {
         movieFilterMutableStateFlow.update { it.copy(sortType = sortType) }
     }
 
-    fun clearFilters(){
+    fun clearFilters() {
         movieFilterMutableStateFlow.value = defaultMovieFilter
     }
-
 }

@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 val searchFeatureModule = module {
     viewModel {
-        SearchViewModel(exceptionHandler = get(), byNameSearchable = get())
+        SearchViewModel(exceptionHandler = get(), searchRepository = get())
     }
 }

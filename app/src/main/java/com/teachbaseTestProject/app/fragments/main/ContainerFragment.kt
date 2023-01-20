@@ -2,13 +2,18 @@ package com.teachbaseTestProject.app.fragments.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.teachbaseTestProject.app.core.BaseFragment
 import com.teachbaseTestProject.app.fragments.main.home.HomeFragment
 import com.teachbaseTestProject.app.fragments.main.search.SearchFragment
+import com.teachbaseTestProject.app.utils.safeActionNavigate
 import com.teachbasetestproject.app.R
 import com.teachbasetestproject.app.databinding.ContainerFragmentBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ContainerFragment : BaseFragment<ContainerFragmentBinding>(ContainerFragmentBinding::inflate) {
 
@@ -23,6 +28,11 @@ class ContainerFragment : BaseFragment<ContainerFragmentBinding>(ContainerFragme
             tab.setIcon(icon)
             tab.setText(text)
         }.attach()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            delay(5000)
+                // findNavController().safeActionNavigate(ContainerFragmentDirections.actionContainerFragmentToFilterFragment())
+        }
     }
 
     private fun buildFragmentStateAdapter() = object : FragmentStateAdapter(childFragmentManager, lifecycle) {

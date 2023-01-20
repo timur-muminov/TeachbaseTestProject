@@ -1,9 +1,11 @@
 package com.teachbaseTestProject.app.fragments.main.search
 
 import android.os.Bundle
+import android.util.Log
 import android.view.inputmethod.EditorInfo
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.teachbaseTestProject.app.core.BaseFragment
@@ -84,7 +86,7 @@ class SearchFragment : BaseFragment<SearchFragmentBinding>(SearchFragmentBinding
         }
 
         binding.filterIcon.setOnClickListener {
-            findNavController().safeActionNavigate(SearchFragmentDirections.actionSearchFragmentToFilterFragment())
+            //requireActivity().findNavController(R.id.nav_host_fragment).safeActionNavigate(SearchFragmentDirections.actionSearchFragmentToFilterFragment())
         }
 
         binding.includedExceptionDialog.retryButton.setOnClickListener {

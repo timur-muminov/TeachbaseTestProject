@@ -26,7 +26,7 @@ class MovieDetailViewModel(
         viewModelScope.launch {
             exceptionHandler.handle {
                 privateLoadState.value = PrivateLoadState.Loading
-                byFiltersSearchable.refresh()
+                //byFiltersSearchable.refresh()
                 privateLoadState.value = PrivateLoadState.Loaded
             }.catch<Exception> { error ->
                 privateLoadState.value = PrivateLoadState.LoadingError(error.mapThrowable())
