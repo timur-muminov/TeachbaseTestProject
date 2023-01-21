@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.teachbaseTestProject.app.core.BaseFragment
 import com.teachbaseTestProject.app.fragments.main.home.HomeFragment
+import com.teachbaseTestProject.app.fragments.main.search.SearchContainer
 import com.teachbaseTestProject.app.fragments.main.search.SearchFragment
 import com.teachbaseTestProject.app.utils.safeActionNavigate
 import com.teachbasetestproject.app.R
@@ -28,16 +29,11 @@ class ContainerFragment : BaseFragment<ContainerFragmentBinding>(ContainerFragme
             tab.setIcon(icon)
             tab.setText(text)
         }.attach()
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            delay(5000)
-                // findNavController().safeActionNavigate(ContainerFragmentDirections.actionContainerFragmentToFilterFragment())
-        }
     }
 
     private fun buildFragmentStateAdapter() = object : FragmentStateAdapter(childFragmentManager, lifecycle) {
         override fun getItemCount(): Int = 2
         override fun createFragment(position: Int): Fragment =
-            if (position == 0) HomeFragment() else SearchFragment()
+            if (position == 0) HomeFragment() else SearchContainer()
     }
 }

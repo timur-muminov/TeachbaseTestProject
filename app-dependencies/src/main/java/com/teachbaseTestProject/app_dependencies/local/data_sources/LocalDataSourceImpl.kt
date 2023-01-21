@@ -7,10 +7,10 @@ import com.teachbaseTestProject.app_dependencies.local.localId_builder.LocalIdBu
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MovieDTO
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MoviesDTO
 import com.teachbaseTestProject.app_dependencies.repository.model.LocalDataSource
-import com.teachbaseTestProject.filter.MovieFilter
-import com.teachbaseTestProject.movie.Category
-import com.teachbaseTestProject.movie.Movie
-import com.teachbaseTestProject.movie.MovieDetail
+import com.teachbaseTestProject.entities.filter.MovieFilter
+import com.teachbaseTestProject.entities.movie.Category
+import com.teachbaseTestProject.entities.movie.Movie
+import com.teachbaseTestProject.entities.movie.MovieDetail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn

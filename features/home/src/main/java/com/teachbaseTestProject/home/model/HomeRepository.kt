@@ -1,7 +1,7 @@
 package com.teachbaseTestProject.home.model
 
-import com.teachbaseTestProject.movie.Category
-import com.teachbaseTestProject.movie.Movie
+import com.teachbaseTestProject.entities.movie.Category
+import com.teachbaseTestProject.entities.movie.Movie
 import kotlinx.coroutines.flow.Flow
 
 

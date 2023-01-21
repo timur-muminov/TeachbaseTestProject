@@ -6,7 +6,7 @@ import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MoviesDTO
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie_detail.MovieDetailDTO
 import com.teachbaseTestProject.app_dependencies.remote.request_builder.RequestBuilder
 import com.teachbaseTestProject.app_dependencies.repository.model.RemoteDataSource
-import com.teachbaseTestProject.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieFilter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

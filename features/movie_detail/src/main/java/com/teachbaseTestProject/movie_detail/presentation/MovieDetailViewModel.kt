@@ -2,9 +2,9 @@ package com.teachbaseTestProject.movie_detail.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.teachbaseTestProject.movie.Category
-import com.teachbaseTestProject.movie.Movie
-import com.teachbaseTestProject.movie.MovieDetail
+import com.teachbaseTestProject.entities.movie.Category
+import com.teachbaseTestProject.entities.movie.Movie
+import com.teachbaseTestProject.entities.movie.MovieDetail
 import dev.icerock.moko.errors.handler.ExceptionHandler
 import dev.icerock.moko.errors.mappers.mapThrowable
 import dev.icerock.moko.resources.desc.StringDesc

@@ -43,15 +43,13 @@
     <include
         android:id="@+id/included_progress_bar"
         layout="@layout/progress_bar"
-        app:visibilityMode="ignore"
         android:visibility="gone"
-      />
+        app:visibilityMode="ignore" />
 
     <include
         android:id="@+id/included_exception_dialog"
         layout="@layout/exception_dialog"
         android:visibility="gone"
-        app:visibilityMode="ignore"
-        />
+        app:visibilityMode="ignore" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

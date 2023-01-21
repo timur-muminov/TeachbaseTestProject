@@ -4,11 +4,11 @@ import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MovieDTO
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MoviesDTO
 import com.teachbaseTestProject.app_dependencies.repository.model.LocalDataSource
 import com.teachbaseTestProject.app_dependencies.repository.model.RemoteDataSource
-import com.teachbaseTestProject.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieFilter
 import com.teachbaseTestProject.home.model.HomeRepository
 import com.teachbaseTestProject.home.presentation.Categories
-import com.teachbaseTestProject.movie.Category
-import com.teachbaseTestProject.movie.Movie
+import com.teachbaseTestProject.entities.movie.Category
+import com.teachbaseTestProject.entities.movie.Movie
 import com.teachbaseTestProject.search.model.SearchRepository
 import kotlinx.coroutines.flow.*
 

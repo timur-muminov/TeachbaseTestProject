@@ -206,19 +206,17 @@
         android:id="@+id/rating_slider"
         android:layout_width="0dp"
         android:layout_height="4dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:stepSize="1.0"
         android:valueFrom="0.0"
         android:valueTo="10.0"
-        app:haloColor="@null"
-        app:labelBehavior="gone"
+        app:haloColor="@color/transparent"
+        app:labelBehavior="floating"
         app:layout_constraintBottom_toBottomOf="@+id/rating_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rating"
+        app:layout_constraintStart_toStartOf="@+id/rating_static_textview"
         app:layout_constraintTop_toBottomOf="@id/rating_static_textview"
         app:thumbColor="@color/main_text_color"
-        app:thumbRadius="8dp"
+        app:thumbRadius="6dp"
         app:tickVisible="false"
         app:trackColorActive="@color/main_text_color"
         app:trackColorInactive="@color/gray_1" />
@@ -246,7 +244,7 @@
         tools:ignore="RtlSymmetry" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/sort_type"
+        android:id="@+id/sort_type_tablayout"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
@@ -285,7 +283,7 @@
         android:background="@drawable/shape_custom_divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sort_type" />
+        app:layout_constraintTop_toBottomOf="@+id/sort_type_tablayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/show_button"

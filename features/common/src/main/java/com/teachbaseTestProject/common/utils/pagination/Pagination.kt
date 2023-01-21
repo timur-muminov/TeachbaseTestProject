@@ -6,10 +6,10 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
 
-class Pagination<ITEM, ARGUMENTS>(
+class Pagination<ITEM, FILTER>(
     private val initialPage: Int = 0,
     private val initialData: List<ITEM> = emptyList(),
-    private val loadData: suspend (ARGUMENTS, page: Int) -> List<ITEM>,
+    private val loadData: suspend (FILTER, page: Int) -> List<ITEM>,
 ) {
     private val dataMutableStateFlow = MutableStateFlow(initialData)
     fun dataFlow(): Flow<List<ITEM>> = dataMutableStateFlow
@@ -24,7 +24,7 @@ class Pagination<ITEM, ARGUMENTS>(
         dataMutableStateFlow.value = initialData
     }
 
-    suspend fun next(arguments: ARGUMENTS) {
+    suspend fun next(arguments: FILTER) {
         mutex.withLock {
             val list = loadData(arguments, page)
             if (list.isEmpty()) return@withLock

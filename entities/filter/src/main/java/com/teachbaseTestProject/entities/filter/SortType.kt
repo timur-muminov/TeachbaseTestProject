@@ -1,4 +1,4 @@
-package com.teachbaseTestProject.filter
+package com.teachbaseTestProject.entities.filter
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

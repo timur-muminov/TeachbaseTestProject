@@ -5,8 +5,8 @@ package com.teachbaseTestProject.home.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teachbaseTestProject.home.model.HomeRepository
-import com.teachbaseTestProject.movie.Category
-import com.teachbaseTestProject.movie.Movie
+import com.teachbaseTestProject.entities.movie.Category
+import com.teachbaseTestProject.entities.movie.Movie
 import dev.icerock.moko.errors.handler.ExceptionHandler
 import dev.icerock.moko.errors.mappers.mapThrowable
 import dev.icerock.moko.resources.desc.StringDesc

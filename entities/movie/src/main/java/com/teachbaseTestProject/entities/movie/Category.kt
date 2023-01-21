@@ -1,4 +1,4 @@
-package com.teachbaseTestProject.movie
+package com.teachbaseTestProject.entities.movie
 
 data class Category(
     val id: Int,

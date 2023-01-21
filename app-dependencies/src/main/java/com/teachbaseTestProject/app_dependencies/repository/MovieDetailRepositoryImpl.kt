@@ -4,7 +4,7 @@ import com.teachbaseTestProject.app_dependencies.local.entity.movie_detail.Local
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie_detail.MovieDetailDTO
 import com.teachbaseTestProject.app_dependencies.repository.model.LocalDataSource
 import com.teachbaseTestProject.app_dependencies.repository.model.RemoteDataSource
-import com.teachbaseTestProject.movie.MovieDetail
+import com.teachbaseTestProject.entities.movie.MovieDetail
 import com.teachbaseTestProject.movie_detail.model.MovieDetailRepository
 import kotlinx.coroutines.flow.Flow
 

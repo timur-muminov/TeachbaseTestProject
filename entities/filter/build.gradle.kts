@@ -3,4 +3,4 @@ plugins {
         id("kotlin-parcelize")
 }
 
-android.namespace = "com.teachbasetestproject.filter"
+android.namespace = "com.teachbasetestproject.entities.filter"

@@ -1,9 +1,9 @@
 package com.teachbaseTestProject.app_dependencies.remote.request_builder
 
 import com.teachbaseTestProject.app_dependencies.token_storage.TokenStorage
-import com.teachbaseTestProject.filter.MovieFilter
-import com.teachbaseTestProject.filter.MovieType
-import com.teachbaseTestProject.filter.SortType
+import com.teachbaseTestProject.entities.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieType
+import com.teachbaseTestProject.entities.filter.SortType
 
 class RequestBuilderImpl(
     tokenStorage: TokenStorage
@@ -17,30 +17,27 @@ class RequestBuilderImpl(
 
     private val pageField = "&page="
 
-    private val sortByAscendingNumber = "1"
+    private val sortByDescendingNumber = "-1"
 
     private val token = "&token=${tokenStorage.getToken()}"
 
     override fun buildRequestByFilters(movieFilter: MovieFilter, page: Int): String {
         val request: StringBuilder = StringBuilder()
         request.append(movie)
-        movieFilter.movieType?.let {
-            if (it == MovieType.ALL) return@let
-            val filter = buildFilter(Filters.TYPE, it.getTypeNumber())
-            request.append(filter)
+
+        if (movieFilter.movieType != MovieType.ALL) {
+            val movieType = buildFilter(Filters.TYPE, movieFilter.movieType.getTypeNumber())
+            request.append(movieType)
         }
-        movieFilter.rate?.let {
-            val filter = buildFilter(Filters.RATING, "${it.first}-${it.second}")
-            request.append(filter)
-        }
-        movieFilter.dateRange?.let {
-            val filter = buildFilter(Filters.YEAR, "${it.first}-${it.second}")
-            request.append(filter)
-        }
-        movieFilter.sortType?.let {
-            val filter = sortField + it.getTypeField() + sortType + sortByAscendingNumber
-            request.append(filter)
-        }
+
+        val rate = buildFilter(Filters.RATING, "${movieFilter.rate.first}-${movieFilter.rate.second}")
+        request.append(rate)
+
+        val dateRange = buildFilter(Filters.YEAR, "${movieFilter.dateRange.first}-${movieFilter.dateRange.second}")
+        request.append(dateRange)
+
+        val sortType = sortField + movieFilter.sortType.getTypeField() + sortType + sortByDescendingNumber
+        request.append(sortType)
 
         request.append(pageField + page)
         request.append(token)
@@ -90,7 +87,7 @@ class RequestBuilderImpl(
 
     private fun SortType.getTypeField() =
         when (this) {
-            SortType.RATE -> "rating"
+            SortType.RATE -> "rating.kp"
             SortType.YEAR -> "year"
             SortType.POPULARITY -> "popularity"
         }

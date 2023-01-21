@@ -1,6 +1,6 @@
 package com.teachbaseTestProject.movie_detail.model
 
-import com.teachbaseTestProject.movie.MovieDetail
+import com.teachbaseTestProject.entities.movie.MovieDetail
 import kotlinx.coroutines.flow.Flow
 
 interface MovieDetailRepository {

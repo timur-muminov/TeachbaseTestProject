@@ -1,8 +1,8 @@
 package com.teachbaseTestProject.filter.presentation
 
-import com.teachbaseTestProject.filter.MovieFilter
-import com.teachbaseTestProject.filter.MovieType
-import com.teachbaseTestProject.filter.SortType
+import com.teachbaseTestProject.entities.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieType
+import com.teachbaseTestProject.entities.filter.SortType
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

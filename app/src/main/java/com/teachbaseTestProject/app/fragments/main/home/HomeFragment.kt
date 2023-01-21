@@ -1,16 +1,18 @@
 package com.teachbaseTestProject.app.fragments.main.home
 
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.teachbaseTestProject.app.core.BaseFragment
+import com.teachbaseTestProject.app.core.utils.formatToRateValue
 import com.teachbaseTestProject.app.utils.epicadapter.EpicAdapter
 import com.teachbaseTestProject.app.utils.epicadapter.bind
 import com.teachbaseTestProject.app.utils.epicadapter.requireEpicAdapter
 import com.teachbaseTestProject.app.utils.launchWith
 import com.teachbaseTestProject.app.utils.onEachChanged
+import com.teachbaseTestProject.entities.movie.Movie
 import com.teachbaseTestProject.home.presentation.HomeViewModel
-import com.teachbaseTestProject.movie.Movie
 import com.teachbasetestproject.app.R
 import com.teachbasetestproject.app.databinding.CategoryItemBinding
 import com.teachbasetestproject.app.databinding.HomeFragmentBinding
@@ -65,10 +67,10 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
         setup<Movie, MovieItemBinding>(MovieItemBinding::inflate) {
             init { movieImage.clipToOutline = true }
             bind { item ->
-                Glide.with(requireContext()).load(item.imageUrl ?: R.drawable.placeholder_movie)
+                Glide.with(requireContext()).load(item.imageUrl)
                     .placeholder(R.drawable.placeholder_movie).into(movieImage)
-                val rate = if (!item.rate.isNullOrEmpty()) item.rate!!.formatToRateValue() else ""
-                movieRateTextview.text = rate
+
+                movieRateTextview.text = item.formatRate(this)
                 movieNameTextview.text = item.name ?: ""
                 movieGenreTextview.text = item.genre ?: ""
 
@@ -79,5 +81,10 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
         }
     }
 
-    private fun String.formatToRateValue() = String.format("%.1f", this.toFloat()).replace(",", ".")
+    private fun Movie.formatRate(binding: MovieItemBinding): String = if (!rate.isNullOrEmpty()) {
+        if (rate!!.toFloat() < 7)
+            binding.movieRateTextview.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_5))
+        rate!!.formatToRateValue()
+    } else ""
+
 }

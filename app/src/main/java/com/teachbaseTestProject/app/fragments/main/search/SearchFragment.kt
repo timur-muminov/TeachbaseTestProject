@@ -16,7 +16,7 @@ import com.teachbaseTestProject.app.utils.hideKeyboard
 import com.teachbaseTestProject.app.utils.launchWith
 import com.teachbaseTestProject.app.utils.onEachChanged
 import com.teachbaseTestProject.app.utils.safeActionNavigate
-import com.teachbaseTestProject.movie.Movie
+import com.teachbaseTestProject.entities.movie.Movie
 import com.teachbaseTestProject.search.presentation.SearchViewModel
 import com.teachbasetestproject.app.R
 import com.teachbasetestproject.app.databinding.SearchFragmentBinding
@@ -86,7 +86,7 @@ class SearchFragment : BaseFragment<SearchFragmentBinding>(SearchFragmentBinding
         }
 
         binding.filterIcon.setOnClickListener {
-            //requireActivity().findNavController(R.id.nav_host_fragment).safeActionNavigate(SearchFragmentDirections.actionSearchFragmentToFilterFragment())
+            findNavController().safeActionNavigate(SearchFragmentDirections.actionSearchFragmentToFilterFragment())
         }
 
         binding.includedExceptionDialog.retryButton.setOnClickListener {

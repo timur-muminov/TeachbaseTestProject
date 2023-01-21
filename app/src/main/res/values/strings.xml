@@ -24,5 +24,9 @@
     <string name="cartoons">Мультфильмы</string>
     <string name="year">Год</string>
     <string name="save">Сохранить</string>
+    <string name="from">с</string>
+    <string name="to">по</string>
+    <string name="results">Результаты</string>
+
 
 </resources>

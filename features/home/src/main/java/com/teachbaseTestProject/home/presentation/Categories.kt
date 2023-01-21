@@ -1,9 +1,9 @@
 package com.teachbaseTestProject.home.presentation
 
-import com.teachbaseTestProject.filter.MovieFilter
-import com.teachbaseTestProject.filter.MovieType
-import com.teachbaseTestProject.filter.SortType
-import com.teachbaseTestProject.movie.Category
+import com.teachbaseTestProject.entities.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieType
+import com.teachbaseTestProject.entities.filter.SortType
+import com.teachbaseTestProject.entities.movie.Category
 
 
 class Categories {

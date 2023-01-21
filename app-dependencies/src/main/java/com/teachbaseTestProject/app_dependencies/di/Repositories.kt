@@ -1,9 +1,11 @@
 package com.teachbaseTestProject.app_dependencies.di
 
 import com.teachbaseTestProject.app_dependencies.exceptions_handler.NetworkExceptionMapper
+import com.teachbaseTestProject.app_dependencies.repository.FilterRepositoryImpl
 import com.teachbaseTestProject.app_dependencies.repository.HomeRepositoryImpl
 import com.teachbaseTestProject.app_dependencies.repository.MovieDetailRepositoryImpl
 import com.teachbaseTestProject.app_dependencies.repository.SearchRepositoryImpl
+import com.teachbaseTestProject.filter.model.FilterRepository
 import com.teachbaseTestProject.home.model.HomeRepository
 import com.teachbaseTestProject.movie_detail.model.MovieDetailRepository
 import com.teachbaseTestProject.search.model.SearchRepository
@@ -30,7 +32,6 @@ val repositoryModule = module {
     single<HomeRepository> { HomeRepositoryImpl(localDataSource = get(), remoteDataSource = get(), categories = get()) }
     single<MovieDetailRepository> { MovieDetailRepositoryImpl(localDataSource = get(), remoteDataSource = get()) }
     single<SearchRepository> { SearchRepositoryImpl(remoteDataSource = get()) }
-
-    single { HomeRepositoryImpl(localDataSource = get(), remoteDataSource = get(), categories = get()) }
+    single<FilterRepository> { FilterRepositoryImpl(remoteDataSource = get()) }
 }
 

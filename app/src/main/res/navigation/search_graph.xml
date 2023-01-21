@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_graph"
+    app:startDestination="@id/search_fragment">
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.main.search.SearchFragment"
+        tools:layout="@layout/search_fragment">
+        <action
+            android:id="@+id/action_search_fragment_to_filter_fragment"
+            app:destination="@id/filter_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filter_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.filter.FiltersFragment"
+        tools:layout="@layout/filter_fragment">
+        <action
+            android:id="@+id/action_filter_fragment_to_filter_result_fragment"
+            app:destination="@id/filter_result_fragment" />
+        <action
+            android:id="@+id/action_filter_fragment_to_year_picker_fragment"
+            app:destination="@id/year_picker_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filter_result_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.filter_result.FilterResultFragment"
+        tools:layout="@layout/filter_result_fragment" >
+        <argument
+            android:name="movieFilter"
+            app:argType="com.teachbaseTestProject.entities.filter.MovieFilter" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/year_picker_fragment"
+        android:name="com.teachbaseTestProject.app.fragments.filter.YearPickerDialogFragment"
+        tools:layout="@layout/year_picker_dialog_fragment" >
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+    </dialog>
+
+</navigation>

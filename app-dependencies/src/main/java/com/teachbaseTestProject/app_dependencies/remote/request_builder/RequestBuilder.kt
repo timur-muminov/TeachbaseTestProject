@@ -1,6 +1,6 @@
 package com.teachbaseTestProject.app_dependencies.remote.request_builder
 
-import com.teachbaseTestProject.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieFilter
 
 interface RequestBuilder {
     fun buildRequestByFilters(movieFilter: MovieFilter, page:Int): String

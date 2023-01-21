@@ -1,6 +1,6 @@
 package com.teachbaseTestProject.app_dependencies.local.localId_builder
 
-import com.teachbaseTestProject.filter.MovieFilter
+import com.teachbaseTestProject.entities.filter.MovieFilter
 
 class LocalIdBuilderImpl : LocalIdBuilder {
 
@@ -8,7 +8,7 @@ class LocalIdBuilderImpl : LocalIdBuilder {
     private val byNameKey = "name"
 
     override fun buildLocalIdByFilters(movieFilter: MovieFilter): String =
-        byFilterKey + movieFilter.movieType?.name + movieFilter.dateRange + movieFilter.sortType + movieFilter.rate
+        byFilterKey + movieFilter.movieType.name + movieFilter.dateRange + movieFilter.sortType + movieFilter.rate
 
     override fun buildLocalIdByName(movieName: String): String = byNameKey + movieName
 }
