@@ -1,6 +1,5 @@
 package com.teachbaseTestProject.app_dependencies.local.data_sources
 
-import android.util.Log
 import com.teachbaseTestProject.app_dependencies.local.api.LocalMoviesApi
 import com.teachbaseTestProject.app_dependencies.local.entity.movie.LocalMovieDTO
 import com.teachbaseTestProject.app_dependencies.local.entity.movie_detail.LocalMovieDetailDTO
@@ -29,9 +28,7 @@ class LocalDataSourceImpl(
 
     override fun getMovieDetailByRemoteId(remoteId: Int): Flow<MovieDetail?> =
         localMoviesApi.getMovieDetailByRemoteId(remoteId).map {
-            val o = it?.toMovieDetail()
-            Log.e("taaaag", o.toString())
-            return@map o
+            return@map it?.toMovieDetail()
         }.flowOn(Dispatchers.IO)
 
 
@@ -42,7 +39,6 @@ class LocalDataSourceImpl(
     }
 
     override suspend fun updateMovieDetail(localMovieDetailDTO: LocalMovieDetailDTO) = withContext(Dispatchers.IO) {
-        Log.e("taaaag", localMovieDetailDTO.toString())
         localMoviesApi.insertMovieDetail(localMovieDetailDTO)
     }
 
