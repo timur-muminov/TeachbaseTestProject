@@ -19,7 +19,7 @@ interface LocalMoviesApi {
 
 
     @Query("SELECT * FROM moviesDetail WHERE remoteId = (:remoteId)")
-    fun getMovieDetailByRemoteId(remoteId: Int): Flow<LocalMovieDetailDTO>
+    fun getMovieDetailByRemoteId(remoteId: Int): Flow<LocalMovieDetailDTO?>
 
     @Insert(LocalMovieDetailDTO::class, onConflict = OnConflictStrategy.REPLACE)
     fun insertMovieDetail(localMovieDetailDTO: LocalMovieDetailDTO)

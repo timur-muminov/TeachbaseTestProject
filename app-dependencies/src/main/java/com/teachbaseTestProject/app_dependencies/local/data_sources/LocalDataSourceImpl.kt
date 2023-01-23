@@ -1,5 +1,6 @@
 package com.teachbaseTestProject.app_dependencies.local.data_sources
 
+import android.util.Log
 import com.teachbaseTestProject.app_dependencies.local.api.LocalMoviesApi
 import com.teachbaseTestProject.app_dependencies.local.entity.movie.LocalMovieDTO
 import com.teachbaseTestProject.app_dependencies.local.entity.movie_detail.LocalMovieDetailDTO
@@ -8,7 +9,6 @@ import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MovieDTO
 import com.teachbaseTestProject.app_dependencies.remote.entity.movie.MoviesDTO
 import com.teachbaseTestProject.app_dependencies.repository.model.LocalDataSource
 import com.teachbaseTestProject.entities.filter.MovieFilter
-import com.teachbaseTestProject.entities.movie.Category
 import com.teachbaseTestProject.entities.movie.Movie
 import com.teachbaseTestProject.entities.movie.MovieDetail
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +28,11 @@ class LocalDataSourceImpl(
     }
 
     override fun getMovieDetailByRemoteId(remoteId: Int): Flow<MovieDetail?> =
-        localMoviesApi.getMovieDetailByRemoteId(remoteId).map { it.toMovieDetail() }.flowOn(Dispatchers.IO)
+        localMoviesApi.getMovieDetailByRemoteId(remoteId).map {
+            val o = it?.toMovieDetail()
+            Log.e("taaaag", o.toString())
+            return@map o
+        }.flowOn(Dispatchers.IO)
 
 
     override suspend fun updateMovies(movieFilter: MovieFilter, moviesDTO: MoviesDTO) = withContext(Dispatchers.IO) {
@@ -38,6 +42,7 @@ class LocalDataSourceImpl(
     }
 
     override suspend fun updateMovieDetail(localMovieDetailDTO: LocalMovieDetailDTO) = withContext(Dispatchers.IO) {
+        Log.e("taaaag", localMovieDetailDTO.toString())
         localMoviesApi.insertMovieDetail(localMovieDetailDTO)
     }
 

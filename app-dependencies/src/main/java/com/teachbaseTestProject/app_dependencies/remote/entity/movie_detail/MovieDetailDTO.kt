@@ -15,6 +15,6 @@ data class MovieDetailDTO(
     @Expose val year: String?,
     @Expose val type: String?,
     @Expose val persons: List<PersonDTO>?,
-    @Expose val spokenLanguages: LanguageDTO?,
+    @Expose val spokenLanguages: List<LanguageDTO?>?,
     @Expose val description: String?
 )

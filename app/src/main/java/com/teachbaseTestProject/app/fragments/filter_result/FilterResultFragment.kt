@@ -2,11 +2,18 @@ package com.teachbaseTestProject.app.fragments.filter_result
 
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.teachbaseTestProject.app.core.BaseFragment
+import com.teachbaseTestProject.app.core.decorator.DecorConfig
+import com.teachbaseTestProject.app.core.decorator.LinearDividerDrawer
+import com.teachbaseTestProject.app.core.decorator.base.Decorator
 import com.teachbaseTestProject.app.core.utils.formatToRateValue
+import com.teachbaseTestProject.app.core.utils.getColorFromRate
+import com.teachbaseTestProject.app.fragments.movie_detail.MovieDetailFragment
 import com.teachbaseTestProject.app.utils.epicadapter.EpicAdapter
 import com.teachbaseTestProject.app.utils.epicadapter.bind
 import com.teachbaseTestProject.app.utils.epicadapter.requireEpicAdapter
@@ -55,6 +62,8 @@ class FilterResultFragment : BaseFragment<FilterResultFragmentBinding>(FilterRes
         binding.includedExceptionDialog.retryButton.setOnClickListener {
             viewModel.loadData()
         }
+        val decorator = Decorator.Builder().overlay(LinearDividerDrawer(getFragmentResultDecorConfig())).build()
+        binding.moviesRecyclerview.addItemDecoration(decorator)
         binding.moviesRecyclerview.adapter = buildMoviesAdapter()
         binding.backButton.setOnClickListener {
             findNavController().popBackStack()
@@ -71,19 +80,27 @@ class FilterResultFragment : BaseFragment<FilterResultFragmentBinding>(FilterRes
                 movieSecondNameTextview.text = item.secondName ?: ""
                 movieGenreTextview.text = item.genre ?: ""
                 movieVotesTextview.text = item.votes ?: ""
-                movieRateTextview.text = item.formatRate(this)
+                movieRateTextview.text = item.rate.formatToRateValue()
+                movieRateTextview.setTextColor(requireContext().getColorFromRate(item.rate?.toFloat()))
 
                 root.setOnClickListener {
-                    // todo
+                    requireActivity().supportFragmentManager.commit {
+                        addToBackStack(null)
+                        replace(
+                            R.id.nav_host_fragment,
+                            MovieDetailFragment::class.java,
+                            bundleOf("movieId" to item.id)
+                        )
+                    }
                 }
             }
         }
     }
 
-    private fun Movie.formatRate(binding: SearchMovieItemBinding): String = if (!rate.isNullOrEmpty()) {
-        if (rate!!.toFloat() < 7)
-            binding.movieRateTextview.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_5))
-        rate!!.formatToRateValue()
-    } else ""
 
+    private fun getFragmentResultDecorConfig() = DecorConfig(
+        color = ContextCompat.getColor(requireContext(), R.color.gray_8),
+        height = 1,
+        paddingStart = 106
+    )
 }

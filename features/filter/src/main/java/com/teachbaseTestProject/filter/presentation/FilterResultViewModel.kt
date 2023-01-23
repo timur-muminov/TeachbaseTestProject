@@ -20,7 +20,6 @@ class FilterResultViewModel(
     private val filterRepository: FilterRepository
 ) : ViewModel() {
 
-
     private val moviesPagination = Pagination<Movie, MovieFilter>(1) { movieFilter, page ->
         filterRepository.getMoviesByFilters(movieFilter, page)
     }

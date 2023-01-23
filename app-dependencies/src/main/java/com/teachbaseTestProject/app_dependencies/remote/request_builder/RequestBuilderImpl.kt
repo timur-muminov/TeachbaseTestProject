@@ -45,11 +45,11 @@ class RequestBuilderImpl(
     }
 
     override fun buildRequestByName(movieName: String, page: Int): String {
-        return buildFilter(Filters.NAME, movieName) + pageField + page + token
+        return movie + buildFilter(Filters.NAME, movieName) + pageField + page + token
     }
 
     override fun buildRequestById(movieId: Int): String {
-        return buildFilter(Filters.ID, movieId.toString()) + token
+        return movie + buildFilter(Filters.ID, movieId.toString()) + token
     }
 
     private fun buildFilter(filters: Filters, value: String): String {

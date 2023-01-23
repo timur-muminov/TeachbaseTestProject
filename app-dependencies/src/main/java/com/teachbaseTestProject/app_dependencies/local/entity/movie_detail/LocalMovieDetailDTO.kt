@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import com.teachbaseTestProject.entities.movie.Person
 
 @Entity(tableName = "moviesDetail")
 data class LocalMovieDetailDTO(
@@ -17,7 +18,9 @@ data class LocalMovieDetailDTO(
     @ColumnInfo(name = "genre") val genre: String?,
 
     @TypeConverters(PersonsConverter::class)
-    @ColumnInfo(name = "persons") val persons: List<String?>?,
-    @ColumnInfo(name = "spokenLanguages") val spokenLanguages: String?,
+    @ColumnInfo(name = "persons") val persons: List<Person>?,
+
+    @TypeConverters(StringsConverter::class)
+    @ColumnInfo(name = "spokenLanguages") val spokenLanguages: List<String?>?,
     @ColumnInfo(name = "description") val description: String?
 )

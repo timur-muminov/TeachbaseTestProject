@@ -27,6 +27,8 @@
     <string name="from">с</string>
     <string name="to">по</string>
     <string name="results">Результаты</string>
+    <string name="roles_played">В ролях: </string>
+    <string name="etc">и другие</string>
 
 
 </resources>

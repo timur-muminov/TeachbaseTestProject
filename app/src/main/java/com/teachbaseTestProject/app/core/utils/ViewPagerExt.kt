@@ -16,8 +16,3 @@ fun ViewPager2.setShowSideItems() {
 }
 
 
-private fun Int.toPx() = TypedValue.applyDimension(
-    TypedValue.COMPLEX_UNIT_DIP,
-    this.toFloat(),
-    Resources.getSystem().displayMetrics
-)

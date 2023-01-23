@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     app:layoutDescription="@xml/search_fragment_scene">
 
     <View
@@ -77,7 +76,6 @@
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="25dp"
         android:layout_marginBottom="7dp"
         android:background="@color/gray_2"
         app:layout_constraintBottom_toBottomOf="@+id/search_container"
@@ -86,9 +84,10 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/filter_icon"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="26dp"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:paddingEnd="26dp"
+        android:paddingStart="26dp"
         android:alpha="1"
         app:layout_constraintBottom_toBottomOf="@+id/search_container"
         app:layout_constraintEnd_toEndOf="@+id/search_container"

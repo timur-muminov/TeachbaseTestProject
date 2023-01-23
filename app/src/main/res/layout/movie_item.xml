@@ -27,6 +27,7 @@
             android:layout_width="34dp"
             android:layout_height="19dp"
             android:layout_marginTop="11dp"
+            android:backgroundTint="@color/green_1"
             android:background="@drawable/shape_color_green_1_corners_3"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="center"

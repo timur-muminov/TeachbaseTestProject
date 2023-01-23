@@ -9,7 +9,7 @@ data class MovieDetail(
     val votes: String?,
     val year: String?,
     val genre: String?,
-    val persons: List<String?>?,
-    val spokenLanguages: String?,
+    val persons: List<Person>?,
+    val spokenLanguages: List<String?>?,
     val description: String?
 )

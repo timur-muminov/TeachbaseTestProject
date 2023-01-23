@@ -1,11 +1,15 @@
 package com.teachbaseTestProject.app.fragments.main.home
 
+import android.content.res.ColorStateList
 import android.os.Bundle
-import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.commit
 import com.bumptech.glide.Glide
 import com.teachbaseTestProject.app.core.BaseFragment
 import com.teachbaseTestProject.app.core.utils.formatToRateValue
+import com.teachbaseTestProject.app.core.utils.getColorFromRate
+import com.teachbaseTestProject.app.fragments.movie_detail.MovieDetailFragment
 import com.teachbaseTestProject.app.utils.epicadapter.EpicAdapter
 import com.teachbaseTestProject.app.utils.epicadapter.bind
 import com.teachbaseTestProject.app.utils.epicadapter.requireEpicAdapter
@@ -69,22 +73,24 @@ class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::infl
             bind { item ->
                 Glide.with(requireContext()).load(item.imageUrl)
                     .placeholder(R.drawable.placeholder_movie).into(movieImage)
-
-                movieRateTextview.text = item.formatRate(this)
+                movieRateTextview.text = item.rate.formatToRateValue()
+                movieRateTextview.backgroundTintList =
+                    ColorStateList.valueOf(requireContext().getColorFromRate(item.rate?.toFloat()))
                 movieNameTextview.text = item.name ?: ""
                 movieGenreTextview.text = item.genre ?: ""
 
                 root.setOnClickListener {
-                    //findNavController().safeActionNavigate(HomeFragmentDirections.actionDashboardFragmentToDetailFragment())
+                    requireActivity().supportFragmentManager.commit {
+                        addToBackStack(null)
+                        replace(
+                            R.id.nav_host_fragment,
+                            MovieDetailFragment::class.java,
+                            bundleOf("movieId" to item.id)
+                        )
+                    }
                 }
             }
         }
     }
-
-    private fun Movie.formatRate(binding: MovieItemBinding): String = if (!rate.isNullOrEmpty()) {
-        if (rate!!.toFloat() < 7)
-            binding.movieRateTextview.setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_5))
-        rate!!.formatToRateValue()
-    } else ""
 
 }

@@ -8,27 +8,26 @@
     <fragment
         android:id="@+id/container_fragment"
         android:name="com.teachbaseTestProject.app.fragments.main.ContainerFragment"
-        tools:layout="@layout/container_fragment"/>
+        tools:layout="@layout/container_fragment" />
 
     <fragment
         android:id="@+id/home_fragment"
         android:name="com.teachbaseTestProject.app.fragments.main.home.HomeFragment"
         tools:layout="@layout/home_fragment">
         <action
-            android:id="@+id/action_dashboard_fragment_to_detail_fragment"
+            android:id="@+id/action_home_fragment_to_detail_fragment"
             app:destination="@id/detail_fragment" />
     </fragment>
 
 
     <fragment
         android:id="@+id/detail_fragment"
-        tools:layout="@layout/movie_detail_fragment">
-        <argument
-            android:name="movieId"
-            app:argType="integer" />
-    </fragment>
+        android:name="com.teachbaseTestProject.app.fragments.movie_detail.MovieDetailFragment"
+        tools:layout="@layout/movie_detail_fragment"/>
 
-    <navigation android:id="@+id/search_navigation_graph" >
+    <navigation
+        android:id="@+id/search_navigation_graph"
+        tools:ignore="InvalidNavigation">
         <action
             android:id="@+id/action_global_detail_fragment"
             app:destination="@id/detail_fragment" />

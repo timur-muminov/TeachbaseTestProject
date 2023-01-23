@@ -8,6 +8,7 @@ import com.teachbaseTestProject.app_dependencies.di.repositoryModule
 import com.teachbaseTestProject.app_dependencies.exceptions_handler.ExceptionHandlerConfigurator
 import com.teachbaseTestProject.filter.di.filterFeatureModule
 import com.teachbaseTestProject.home.di.homeFeatureModule
+import com.teachbaseTestProject.movie_detail.di.movieDetailFeatureModule
 import com.teachbaseTestProject.search.di.searchFeatureModule
 
 import org.koin.android.ext.koin.androidContext
@@ -27,7 +28,8 @@ class App : Application() {
                 homeFeatureModule,
                 localDataSourceModule,
                 searchFeatureModule,
-                filterFeatureModule
+                filterFeatureModule,
+                movieDetailFeatureModule
             )
         }
     }

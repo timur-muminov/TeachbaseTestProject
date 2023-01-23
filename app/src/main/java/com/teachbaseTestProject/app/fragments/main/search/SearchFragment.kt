@@ -1,14 +1,17 @@
 package com.teachbaseTestProject.app.fragments.main.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.inputmethod.EditorInfo
 import androidx.activity.OnBackPressedCallback
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
-import androidx.navigation.findNavController
+import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.teachbaseTestProject.app.core.BaseFragment
+import com.teachbaseTestProject.app.core.utils.formatToRateValue
+import com.teachbaseTestProject.app.core.utils.getColorFromRate
+import com.teachbaseTestProject.app.fragments.movie_detail.MovieDetailFragment
 import com.teachbaseTestProject.app.utils.epicadapter.EpicAdapter
 import com.teachbaseTestProject.app.utils.epicadapter.bind
 import com.teachbaseTestProject.app.utils.epicadapter.requireEpicAdapter
@@ -99,14 +102,22 @@ class SearchFragment : BaseFragment<SearchFragmentBinding>(SearchFragmentBinding
             init { movieImage.clipToOutline = true }
             bind { item ->
                 Glide.with(requireContext()).load(item.imageUrl ?: R.drawable.placeholder_movie).into(movieImage)
-                movieRateTextview.text = item.rate ?: ""
+                movieRateTextview.text = item.rate.formatToRateValue()
+                movieRateTextview.setTextColor(requireContext().getColorFromRate(item.rate?.toFloat()))
                 movieNameTextview.text = item.name ?: ""
                 movieSecondNameTextview.text = item.secondName ?: ""
                 movieGenreTextview.text = item.genre ?: ""
                 movieVotesTextview.text = item.votes ?: ""
 
                 root.setOnClickListener {
-                    //findNavController().safeActionNavigate(SearchFragmentDirections.actionSearchFragmentToDetailFragment())
+                    requireActivity().supportFragmentManager.commit {
+                        addToBackStack(null)
+                        replace(
+                            R.id.nav_host_fragment,
+                            MovieDetailFragment::class.java,
+                            bundleOf("movieId" to item.id)
+                        )
+                    }
                 }
             }
         }

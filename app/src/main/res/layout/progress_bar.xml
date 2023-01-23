@@ -6,9 +6,9 @@
     android:clickable="true"
     android:focusable="true"
     app:visibilityMode="ignore"
+    android:background="@color/background"
     android:elevation="10dp"
-    android:id="@+id/progress_bar_layout"
-    android:background="@color/background">
+    android:id="@+id/progress_bar_layout">
 
     <ProgressBar
         android:layout_width="wrap_content"
