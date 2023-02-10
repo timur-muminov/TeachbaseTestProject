@@ -44,7 +44,7 @@ class SearchFragment : BaseFragment<SearchFragmentBinding>(SearchFragmentBinding
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         initViews()
-        requireActivity().onBackPressedDispatcher.addCallback(callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
         viewModel.state.filterIsInstance<SearchViewModel.ViewLoadState.Loaded>().map {
             it.movies

@@ -2,7 +2,6 @@ package com.teachbaseTestProject.app.fragments.movie_detail
 
 import android.os.Bundle
 import androidx.core.view.isVisible
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import com.bumptech.glide.Glide

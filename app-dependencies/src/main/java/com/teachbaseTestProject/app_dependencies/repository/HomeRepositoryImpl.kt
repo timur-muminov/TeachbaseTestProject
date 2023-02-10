@@ -27,5 +27,4 @@ class HomeRepositoryImpl(
 
     override fun moviesFlowByCategory(category: Category): Flow<List<Movie>> =
         localDataSource.getMoviesByFilters(categories.categoriesToFilters[category]!!)
-
 }

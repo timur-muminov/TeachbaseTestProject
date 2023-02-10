@@ -1,7 +1,6 @@
 package com.teachbaseTestProject.app.fragments.main
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -16,7 +15,7 @@ class ContainerFragment : BaseFragment<ContainerFragmentBinding>(ContainerFragme
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
 
-
+        viewLifecycleOwner
         binding.mainViewpager.adapter = buildFragmentStateAdapter()
         binding.mainViewpager.isUserInputEnabled = false
         TabLayoutMediator(binding.tabLayout, binding.mainViewpager) { tab, position ->
