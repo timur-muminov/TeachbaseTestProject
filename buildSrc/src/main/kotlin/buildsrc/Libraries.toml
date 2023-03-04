@@ -1,0 +1,81 @@
+[versions]
+
+build-gradle = "7.3.1"
+kotlin-gradle_plugin = "1.7.21"
+
+appcompat = "1.5.1"
+core-ktx = "1.7.0"
+
+material = "1.7.0"
+swipe_refresh_layout = "1.1.0"
+
+kotlin_coroutines_core = "1.6.1"
+kotlin_coroutines_android = "1.6.1"
+kotlin_reflect = "1.7.21"
+
+viewmodel_lifecycle = "2.5.1"
+fragment = "1.5.4"
+
+glide = "4.12.0"
+glide_kapt = "4.12.0"
+
+retrofit = "2.9.0"
+gson_converter = "2.9.0"
+okhttp_interceptor = "4.9.0"
+
+koin_core = "3.1.4"
+koin_android = "3.1.4"
+
+moko_errors = "0.6.0"
+moko_mvvm = "0.14.0"
+moko_geo = "0.5.0"
+
+simple_rating_bar = "1.5.1"
+
+navigation_ui = "2.5.3"
+navigation_fragment = "2.5.3"
+navigation_safeargs_plugin = "2.5.2"
+
+room_version = "2.5.0"
+
+[libraries]
+
+build-gradle = { module = "com.android.tools.build:gradle", version.ref = "build_gradle" }
+kotlin-gradle_plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin_gradle_plugin" }
+
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core_ktx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+
+material = { module = "com.google.android.material:material", version.ref = "material" }
+swipe-refresh-layout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swipe_refresh_layout" }
+
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutines_core" }
+kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutines_android" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin_reflect" }
+
+viewmodel-lifecycle = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewmodel_lifecycle" }
+fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment" }
+
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-kapt = { module = "com.github.bumptech.glide:compiler", version.ref = "glide_kapt" }
+
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gson_converter" }
+okhttp-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp_interceptor" }
+
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin_core" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin_android" }
+
+moko-errors = { module = "dev.icerock.moko:errors", version.ref = "moko_errors" }
+moko-mvvm = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko_mvvm" }
+moko-geo = { module = "dev.icerock.moko:geo", version.ref = "moko_geo" }
+
+simple-rating-bar = { module = "com.github.ome450901:SimpleRatingBar", version.ref = "simple_rating_bar" }
+
+navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation_ui" }
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation_fragment" }
+navigation-safeargs_plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation_safeargs_plugin" }
+
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room_version" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room_version" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room_version" }
