@@ -1,3 +1,6 @@
+import buildsrc.apis
+import buildsrc.implementations
+
 plugins {
     id("buildsrc.application")
     id("androidx.navigation.safeargs")
@@ -6,17 +9,17 @@ android.namespace = "com.teachbasetestproject.app"
 
 
 dependencies {
-    implementation(buildsrc.Dependencies.appcompat)
-    implementation(buildsrc.Dependencies.material)
-    implementation(buildsrc.Dependencies.kotlin_coroutines_android)
-    implementation(buildsrc.Dependencies.fragment)
-    implementation(buildsrc.Dependencies.glide)
-    implementation(buildsrc.Dependencies.kotlin_reflect)
-    implementation(buildsrc.Dependencies.simple_rating_bar)
-    implementation(buildsrc.Dependencies.navigation_fragment)
-    implementation(buildsrc.Dependencies.navigation_ui)
+    implementations(
+        libs.appcompat,
+        libs.material,
+        libs.kotlin.coroutines.android,
+        libs.fragment,
+        libs.glide,
+        libs.kotlin.reflect,
+        libs.simple.rating.bar,
+        libs.navigation.fragment,
+        libs.navigation.ui
+    )
+    apis(projects.appDependencies)
 }
 
-dependencies {
-    api(projects.appDependencies)
-}

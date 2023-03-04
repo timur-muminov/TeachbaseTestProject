@@ -1,6 +1,7 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("build")
     repositories {
         gradlePluginPortal()
         google()
@@ -14,6 +15,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("buildSrc/src/main/kotlin/buildsrc/Libraries.toml"))
+        }
     }
 }
 rootProject.name = "TeachbaseTestProject"

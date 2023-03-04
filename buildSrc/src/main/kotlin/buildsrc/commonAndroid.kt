@@ -2,13 +2,24 @@ package buildsrc
 
 import com.android.build.gradle.BaseExtension
 import org.gradle.api.JavaVersion
+import org.gradle.api.artifacts.dsl.DependencyHandler
 
 fun BaseExtension.commonAndroid() {
     configureDefaultConfig()
     configureCompileOptions()
 }
 
-private fun BaseExtension.configureDefaultConfig(){
+
+fun DependencyHandler.implementations(vararg dependencyNotation: Any) {
+    dependencyNotation.forEach { add("implementation", it) }
+}
+
+fun DependencyHandler.apis(vararg dependencyNotation: Any) {
+    dependencyNotation.forEach { add("api", it) }
+}
+
+
+private fun BaseExtension.configureDefaultConfig() {
     compileSdkVersion(AppConfig.compile_sdk_version)
 
     defaultConfig {
@@ -19,7 +30,7 @@ private fun BaseExtension.configureDefaultConfig(){
     }
 }
 
-private fun BaseExtension.configureCompileOptions(){
+private fun BaseExtension.configureCompileOptions() {
     compileOptions.sourceCompatibility = JavaVersion.VERSION_1_8
     compileOptions.targetCompatibility = JavaVersion.VERSION_1_8
 }
